@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HarmonyHeal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    /* NAV */
+    nav {
+      background: #2e7d5e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo { color: #fff; font-size: 1.3rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav a { color: #fff; text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { text-decoration: underline; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: #f0f7f4;
+    }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; color: #555; max-width: 550px; margin: 0 auto 2rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background: #2e7d5e;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 0.25rem;
+    }
+    .btn:hover { background: #245f49; }
+
+    /* SECTIONS */
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #2e7d5e;
+    }
+    section p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    hr { border: none; border-top: 1px solid #eee; }
+
+    /* EMPTY PLACEHOLDER BOX */
+    .placeholder {
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+      padding: 3rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      background: #fafafa;
+    }
+
+    /* PROBLEM CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .card h4 { margin-bottom: 0.4rem; font-size: 1rem; }
+    .card p { font-size: 0.88rem; color: #666; margin: 0; }
+
+    /* CHECK-IN */
+    .checkin-box {
+      background: #f0f7f4;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+    .checkin-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .slider-ends {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    input[type="range"] { width: 100%; margin: 0.4rem 0 1.5rem; accent-color: #2e7d5e; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0 1.5rem; }
+    .tag {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: #fff;
+    }
+    .tag.on { background: #2e7d5e; color: #fff; border-color: #2e7d5e; }
+    button.submit {
+      width: 100%;
+      padding: 0.85rem;
+      background: #2e7d5e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+    button.submit:hover { background: #245f49; }
+    .result {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #b2d8c8;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2e7d5e;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">HarmonyHeal</div>
+  <ul>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#checkin">Check-In</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Music as a Tool for Healing</h1>
+  <p>A personalized music and reflection platform to help patients manage stress, anxiety, and pain.</p>
+  <a href="#checkin" class="btn">Try a Check-In</a>
+  <a href="#solution" class="btn" style="background:#fff; color:#2e7d5e;">Learn More</a>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <h2>The Problem</h2>
+  <p>Many healthcare settings leave patients without emotional support. Pain management relies heavily on medication, and clinical systems prioritize efficiency over human connection.</p>
+  <div class="cards">
+    <div class="card">
+      <h4> Emotional Burnout</h4>
+      <p>Patients and clinicians face stress with few outlets.</p>
+    </div>
+    <div class="card">
+      <h4> Over-reliance on Medication</h4>
+      <p>Emotional needs are often overlooked in pain management.</p>
+    </div>
+    <div class="card">
+      <h4> Non-Verbal Struggles</h4>
+      <p>Many patients struggle to express how they feel verbally.</p>
+    </div>
+    <div class="card">
+      <h4> Inaccessible Solutions</h4>
+      <p>Music therapy is often limited to clinical specialists.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <h2>Our Solution</h2>
+  <p>HarmonyHeal is a simple web platform where patients use personalized music as a complementary tool — not a replacement — for stress relief and emotional support.</p>
+  <p><strong>Features:</strong></p>
+  <p>1. Mood & stress check-in before each session</p>
+  <p>2. Personalized playlist recommendations</p>
+  <p>3. Short reflective journaling after listening</p>
+  <p>4. Anonymous data collection to support research</p>
+</section>
+
+<hr>
+
+<!-- RESEARCH -->
+<section id="research">
+  <h2>Research & Findings</h2>
+  <p>Add your research summary, study design, and results here.</p>
+
+  <div class="placeholder">[ Background & Significance — add text here ]</div>
+  <div class="placeholder" style="margin-top:1rem;">[ Gap Analysis — add text here ]</div>
+  <div class="placeholder" style="margin-top:1rem;">[ Study Results / Data Visualization — add charts or findings here ]</div>
+  <div class="placeholder" style="margin-top:1rem;">[ References — add citations here ]</div>
+</section>
+
+<hr>
+
+<!-- CHECK-IN -->
+<section id="checkin">
+  <h2>Try a Check-In</h2>
+  <p>A quick demo of how the platform personalizes your music session.</p>
+  <div class="checkin-box">
+    <label>How tense does your body feel right now?</label>
+    <div class="slider-ends"><span>At ease</span><span>High tension</span></div>
+    <input type="range" id="stressSlider" min="1" max="10" value="5">
+
+    <label>What emotions are present?</label>
+    <div class="tags">
+      <span class="tag" onclick="toggle(this)">Anxious</span>
+      <span class="tag" onclick="toggle(this)">Tired</span>
+      <span class="tag" onclick="toggle(this)">Hopeful</span>
+      <span class="tag" onclick="toggle(this)">In pain</span>
+      <span class="tag" onclick="toggle(this)">Lonely</span>
+      <span class="tag" onclick="toggle(this)">Calm</span>
+      <span class="tag" onclick="toggle(this)">Overwhelmed</span>
+      <span class="tag" onclick="toggle(this)">Numb</span>
+    </div>
+    <button class="submit" onclick="submitCheckin()">Find My Session →</button>
+    <div class="result" id="result"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>HarmonyHeal · Track 3 Music & Health · Student Research Project</p>
+</footer>
+
+<script>
+  function toggle(el) { el.classList.toggle('on'); }
+
+  function submitCheckin() {
+    const stress = parseInt(document.getElementById('stressSlider').value);
+    const tags = [...document.querySelectorAll('.tag.on')].map(t => t.textContent);
+
+    let title, desc, playlist;
+    if (stress >= 7) {
+      title = "Deep Relaxation Session";
+      desc = "A calming sound bath to ease tension and lower stress.";
+      playlist = "🎵 Forest Rain · 432 Hz Tones · Slow Cello";
+    } else if (stress >= 4) {
+      title = "Gentle Uplift Mix";
+      desc = "Soft acoustic music and nature sounds to shift your mood.";
+      playlist = "🎵 Acoustic Guitar · Light Piano · Ocean Waves";
+    } else {
+      title = "Reflective Soundscape";
+      desc = "A mindful soundscape to help you stay present and reflect.";
+      playlist = "🎵 Soft Jazz · Ambient Keys · Light Rain";
+    }
+
+    const tagLine = tags.length ? `<br><strong>Emotions noted:</strong> ${tags.join(', ')}` : '';
+    const box = document.getElementById('result');
+    box.innerHTML = `<strong>Recommended: ${title}</strong><br>${desc}${tagLine}<br>${playlist}`;
+    box.style.display = 'block';
+  }
+</script>
+</body>
+</html>
