@@ -11,70 +11,74 @@
       font-family: Arial, sans-serif;
       background: #fff;
       color: #222;
+      overflow-x: hidden;
     }
 
     /* NAV */
     nav {
       background: #2e7d5e;
-      padding: 1rem 2rem;
+      padding: 1rem 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav .logo { color: #fff; font-size: 1.3rem; font-weight: bold; }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav a { color: #fff; text-decoration: none; font-size: 0.95rem; }
+    nav a { color: #fff; text-decoration: none; font-size: 0.9rem; }
     nav a:hover { text-decoration: underline; }
 
     /* HERO */
     .hero {
       text-align: center;
-      padding: 5rem 2rem;
+      padding: 4rem 5% 3rem;
       background: #f0f7f4;
     }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.1rem; color: #555; max-width: 650px; margin: 0 auto 2rem; line-height: 1.6; }
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 1rem; }
+    .hero p { font-size: clamp(0.95rem, 2vw, 1.1rem); color: #555; max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.6; }
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.75rem;
+      padding: 0.75rem 1.5rem;
       background: #2e7d5e;
       color: #fff;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       margin: 0.25rem;
     }
     .btn:hover { background: #245f49; }
 
     /* SECTIONS */
     section {
-      padding: 4rem 2rem;
-      max-width: 900px;
+      padding: 3rem 5%;
+      max-width: 1200px;
       margin: 0 auto;
     }
     section h2 {
-      font-size: 1.8rem;
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
       margin-bottom: 1rem;
       color: #2e7d5e;
     }
     section h3 {
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       margin: 1.5rem 0 0.75rem;
       color: #2e7d5e;
     }
     section p {
       color: #555;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
       line-height: 1.7;
       margin-bottom: 1rem;
     }
 
-    hr { border: none; border-top: 1px solid #eee; }
+    hr { border: none; border-top: 1px solid #eee; margin: 0; }
 
     /* PROBLEM CARDS */
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
     }
@@ -83,8 +87,8 @@
       border-radius: 8px;
       padding: 1.25rem;
     }
-    .card h4 { margin-bottom: 0.4rem; font-size: 1rem; }
-    .card p { font-size: 0.88rem; color: #666; margin: 0; }
+    .card h4 { margin-bottom: 0.4rem; font-size: clamp(0.95rem, 1.5vw, 1rem); }
+    .card p { font-size: clamp(0.85rem, 1.3vw, 0.88rem); color: #666; margin: 0; }
 
     /* FEATURES */
     .features {
@@ -99,12 +103,12 @@
     .feature-item:last-child { margin-bottom: 0; }
     .feature-item h4 {
       color: #2e7d5e;
-      font-size: 1.05rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
       margin-bottom: 0.3rem;
     }
     .feature-item p {
       color: #666;
-      font-size: 0.92rem;
+      font-size: clamp(0.85rem, 1.3vw, 0.92rem);
       margin: 0;
     }
 
@@ -118,13 +122,57 @@
     }
     .research-box h3 {
       margin-top: 0;
-      font-size: 1.2rem;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+    .research-box h4 {
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      color: #2e7d5e;
+      margin: 1rem 0 0.5rem;
+    }
+
+    /* STATS GRID */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: bold;
+      color: #2e7d5e;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: clamp(0.8rem, 1.3vw, 0.9rem);
+      color: #666;
+    }
+
+    /* KEY FINDINGS */
+    .findings-list {
+      background: #fff;
+      border-left: 3px solid #2e7d5e;
+      padding: 1rem 1.5rem;
+      margin-top: 1rem;
+    }
+    .findings-list li {
+      margin-bottom: 0.5rem;
+      color: #555;
+      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+      line-height: 1.6;
     }
 
     /* OUTCOMES */
     .outcomes {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
     }
@@ -137,12 +185,42 @@
     .outcome-box h4 {
       color: #2e7d5e;
       margin-bottom: 0.5rem;
-      font-size: 1rem;
+      font-size: clamp(0.95rem, 1.5vw, 1rem);
     }
     .outcome-box p {
-      font-size: 0.9rem;
+      font-size: clamp(0.85rem, 1.3vw, 0.9rem);
       color: #666;
       margin: 0;
+    }
+
+    /* TEAM SECTION */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .team-member {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .team-member h4 {
+      color: #2e7d5e;
+      margin-bottom: 0.3rem;
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    }
+    .team-member .role {
+      font-size: clamp(0.8rem, 1.2vw, 0.85rem);
+      color: #888;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .team-member p {
+      font-size: clamp(0.85rem, 1.3vw, 0.9rem);
+      color: #555;
+      margin: 0;
+      line-height: 1.6;
     }
 
     /* CHECK-IN */
@@ -151,16 +229,20 @@
       border-radius: 8px;
       padding: 2rem;
       margin-top: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .checkin-box label {
       display: block;
       font-weight: bold;
       margin-bottom: 0.5rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
     }
     .slider-ends {
       display: flex;
       justify-content: space-between;
-      font-size: 0.8rem;
+      font-size: clamp(0.75rem, 1.2vw, 0.8rem);
       color: #888;
     }
     input[type="range"] { width: 100%; margin: 0.4rem 0 1.5rem; accent-color: #2e7d5e; }
@@ -169,7 +251,7 @@
       padding: 0.4rem 0.9rem;
       border: 1px solid #ccc;
       border-radius: 100px;
-      font-size: 0.85rem;
+      font-size: clamp(0.8rem, 1.3vw, 0.85rem);
       cursor: pointer;
       background: #fff;
     }
@@ -181,7 +263,7 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
       cursor: pointer;
       font-family: Arial, sans-serif;
     }
@@ -193,21 +275,8 @@
       background: #fff;
       border: 1px solid #b2d8c8;
       border-radius: 6px;
-      font-size: 0.95rem;
+      font-size: clamp(0.85rem, 1.3vw, 0.95rem);
       line-height: 1.7;
-    }
-
-    /* CONTACT */
-    .contact-box {
-      background: #f0f7f4;
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-      text-align: center;
-    }
-    .contact-box p {
-      margin: 0;
-      font-size: 0.95rem;
     }
 
     /* FOOTER */
@@ -215,15 +284,16 @@
       background: #2e7d5e;
       color: #fff;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+      padding: 1.5rem 5%;
+      font-size: clamp(0.8rem, 1.3vw, 0.9rem);
     }
     footer a { color: #a8d5c4; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
-    @media (max-width: 640px) {
-      .cards, .outcomes { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
       nav ul { display: none; }
+      section { padding: 2rem 4%; }
+      .hero { padding: 3rem 4% 2rem; }
     }
   </style>
 </head>
@@ -237,15 +307,15 @@
     <li><a href="#problem">Problem</a></li>
     <li><a href="#solution">Solution</a></li>
     <li><a href="#research">Research</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#checkin">Try It</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Music as a Tool for Healing</h1>
-  <p>Music is woven into the fabric of everyday life. From the car radio to the grocery store. It's a universal language with the power to evoke deep emotional and cognitive responses. Health Harmonies combines personalized music with guided reflection to help you manage stress and pain in a simple, accessible way.</p>
+  <h1>Health Harmonies</h1>
+  <p>Music is woven into the fabric of everyday life from the car radio to the grocery store. It's a universal language with the power to evoke deep emotional and cognitive responses. Health Harmonies combines personalized music with guided reflection to help you manage stress and pain in a simple, accessible way.</p>
   <a href="#checkin" class="btn">Try a Check-In</a>
   <a href="#solution" class="btn" style="background:#fff; color:#2e7d5e;">Learn More</a>
 </div>
@@ -254,7 +324,7 @@
 <section id="about">
   <h2>About Health Harmonies</h2>
   <p>Music's lyrics, rhythm, and melodies can influence emotional well-being, promote physical health in pain management, and have great potential to be useful in non-pharmacological interventions for a wide range of conditions. As research continues to explore its therapeutic potential, music is increasingly recognized not only as a form of entertainment but also as a valuable tool in clinical and public health settings to enhance overall quality of life.</p>
-  <p>Whether you have an exam in 10 minutes or need support during a stressful moment, this platform adapts to your needs fitting smoothly into daily life.</p>
+  <p>Whether you have an exam in 10 minutes or need support during a stressful moment, this platform adapts to your needs — fitting smoothly into daily life.</p>
 </section>
 
 <hr>
@@ -262,22 +332,23 @@
 <!-- PROBLEM -->
 <section id="problem">
   <h2>The Problem</h2>
-  <p>Many healthcare settings leave patients without emotional support. Pain management relies heavily on medication, and clinical systems prioritize efficiency over human connection. Current music-based interventions in healthcare are either clinical programs delivered by certified music therapists or passive listening interventions — but both lack personalization and fail to address patients' emotional needs holistically.</p>
+  <p>In many healthcare settings, both patients and clinicians experience emotional stress, burnout, anxiety, and a sense of human disconnection. Modern clinical systems prioritize efficiency, speed, and measurable outcomes, often leaving limited space for emotional processing and personal support. Research suggests that stress and anxiety can amplify pain perception and negatively affect recovery outcomes.</p>
+  <p>Despite this connection, pain management in healthcare continues to rely primarily on pharmacological interventions, which might not fully address a patient's emotional needs. Additionally, many patients struggle to express their emotions verbally, especially when dealing with chronic illness or intense medical treatments.</p>
   <div class="cards">
     <div class="card">
-      <h4>Emotional Burnout</h4>
-      <p>Patients and clinicians face stress with few non-clinical outlets.</p>
+      <h4>  Emotional Burnout</h4>
+      <p>Patients and clinicians face stress with few non-clinical outlets for emotional processing.</p>
     </div>
     <div class="card">
-      <h4>Over-reliance on Medication</h4>
-      <p>Emotional needs are often overlooked in pain management.</p>
+      <h4>  Over-reliance on Medication</h4>
+      <p>Emotional needs are often overlooked in traditional pain management approaches.</p>
     </div>
     <div class="card">
-      <h4>Non-Verbal Struggles</h4>
-      <p>Many patients struggle to express how they feel verbally.</p>
+      <h4>  Non-Verbal Struggles</h4>
+      <p>Many patients struggle to express how they feel verbally, especially during intense treatment.</p>
     </div>
     <div class="card">
-      <h4>Inaccessible Solutions</h4>
+      <h4>  Inaccessible Solutions</h4>
       <p>Music therapy requires certified therapists and is not always accessible in every healthcare setting.</p>
     </div>
   </div>
@@ -328,43 +399,136 @@
 
   <div class="research-box">
     <h3>Gap Analysis</h3>
-    <p>Current music interventions in healthcare fall into three categories: clinical music therapy, passive listening, and digital music tools. However, they often lack personalization and fail to address patients' emotional needs holistically. Clinical music therapy, while effective, requires certified therapists and is not always accessible in every healthcare setting. Passive listening and many digital music tools tend to be generic and do not foster emotional reflection or non-verbal expression. There is a need for a solution that offers accessible, personalized, and emotionally supportive interventions that integrate seamlessly into healthcare environments.</p>
+    <p>Current music interventions in healthcare fall into three categories: clinical music therapy, passive listening, and digital music tools. However, they often lack personalization and fail to address patients' emotional needs holistically.</p>
+    <p>Clinical music therapy, while effective, requires certified therapists and is not always accessible in every healthcare setting. Passive listening and many digital music tools tend to be generic and do not foster emotional reflection or non-verbal expression. There is a need for a solution that offers accessible, personalized, and emotionally supportive interventions that integrate seamlessly into healthcare environments.</p>
   </div>
 
   <div class="research-box">
     <h3>Study Design</h3>
-    <p>The effectiveness of Health Harmonies will be evaluated through pre-post surveys and user engagement tracking. We measure emotional states (stress, anxiety, and pain) using a 0–10 scale before and after platform usage. The survey will also assess the emotional awareness and sense of connection that users feel after their sessions.</p>
+    <p>Our research consisted of an initial background pre-survey, followed by a music-based intervention and guided journaling through our designed website, and concluded with a post-survey evaluating the impact of the music experience and reflective activities.</p>
     
-    <div class="outcomes">
-      <div class="outcome-box">
-        <h4>Pre-Survey</h4>
-        <p>Measures baseline stress, anxiety, emotional awareness, and connection.</p>
+    <h4>Pre-Survey Findings (n = 17)</h4>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-number">7.1/10</div>
+        <div class="stat-label">Average Stress Level</div>
       </div>
-      <div class="outcome-box">
-        <h4>Post-Survey</h4>
-        <p>Evaluates changes in stress, anxiety, pain, and the impact of journaling.</p>
+      <div class="stat-box">
+        <div class="stat-number">6.4/10</div>
+        <div class="stat-label">Average Anxiety Level</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">88%</div>
+        <div class="stat-label">Agree Music Reduces Stress</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Open to Using Music for Health</div>
       </div>
     </div>
-    
-    <p style="margin-top:1rem;"><strong>Engagement Tracking:</strong> Collects data on session frequency, session length, and features used by participants. This helps identify trends and maximize the efficiency of the platform.</p>
+
+    <ul class="findings-list">
+      <li><strong>Emotional Awareness Gap:</strong> 70.6% can identify how they feel emotionally, but only 35.3% have ways to process emotions without feeling judged</li>
+      <li><strong>Key Design Insight:</strong> 47.1% (8/17) said they could identify their emotions but did not have a safe way to process them</li>
+      <li><strong>Most Desired Features:</strong> Personalized playlist recommendations (76%), quick mood/stress check-ins (59%), short journaling prompts (53%)</li>
+      <li><strong>Main Concerns:</strong> Privacy and ease of use — users want the platform to be fast, personalized, and effortless to use</li>
+    </ul>
   </div>
 
   <div class="research-box">
-    <h3>Primary Outcome Measures</h3>
-    <p><strong>Stress Level:</strong> Participants will rate their perceived stress and anxiety level on a 0-10 scale before and after each session.</p>
+    <h3>Post-Survey Results</h3>
+    <p>Based on feedback from our pre-survey, we redesigned our platform to focus on an interactive emotional processing system with quick mood check-ins and short guided journaling. Users then engaged with the Health Harmonies platform and completed a post-intervention survey.</p>
     
-    <h3>Secondary Outcome Measures</h3>
-    <p><strong>Emotional Awareness:</strong> Participants will rate their ability to identify and express emotion using a Likert scale.</p>
+    <h4>Key Improvements</h4>
+    <p>The revised design shifted toward:</p>
+    <ul class="findings-list">
+      <li>Fast personalized loop: check-in → personalized music → short reflection → save progress</li>
+      <li>Simple and effortless sessions to prevent users from abandoning the platform</li>
+      <li>Clear privacy statement explaining what is and is not tracked</li>
+    </ul>
+
+    <p style="margin-top:1rem;"><strong>Engagement Tracking:</strong> We tracked session frequency, session length, and features used by participants to identify trends and maximize platform efficiency.</p>
+  </div>
+
+  <div class="research-box">
+    <h3>Outcome Measures</h3>
+    <div class="outcomes">
+      <div class="outcome-box">
+        <h4>Primary Outcomes</h4>
+        <p><strong>Stress & Anxiety Levels:</strong> Participants rated their perceived stress and anxiety on a 0-10 scale before and after each session</p>
+      </div>
+      <div class="outcome-box">
+        <h4>Secondary Outcomes</h4>
+        <p><strong>Emotional Awareness:</strong> Participants rated their ability to identify and express emotions using a Likert scale</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-box">
+    <h3>Limitations</h3>
+    <ul class="findings-list">
+      <li>Small sample size (n=17) limits generalizability of findings</li>
+      <li>Most respondents were young adults (18-24), so results may not reflect older adults or clinical populations</li>
+      <li>Survey relied on self-reported responses, which may include bias</li>
+      <li>Limited intervention testing — measured interest and needs but not long-term stress reduction</li>
+    </ul>
   </div>
 
   <div class="research-box">
     <h3>Future Research</h3>
-    <p>If possible, we will investigate how the frequency of platform usage influences stress reduction, as well as whether journaling after music listening improves emotional regulation more than music alone.</p>
+    <p>In the future, we plan to test the Health Harmonies platform through a full pre-post intervention design with a larger, more diverse participant pool. Future research may investigate:</p>
+    <ul class="findings-list">
+      <li>How frequency of platform usage influences stress reduction over time</li>
+      <li>Whether journaling after music listening improves emotional regulation more than music alone</li>
+      <li>Expanding personalization features and providing more diverse music choices</li>
+      <li>Testing effectiveness across different age groups and clinical settings</li>
+    </ul>
   </div>
 
   <div class="research-box">
     <h3>References</h3>
-    <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/" target="_blank" style="color:#2e7d5e;">https://pmc.ncbi.nlm.nih.gov/articles/PMC10765015/</a></p>
+    <p style="font-size:0.9rem; line-height:1.8;">
+      1. Bayram Deger V. Editorial: anxiety, burnout, and stress among healthcare professionals. <em>Front Psychol.</em> 2024.<br>
+      2. National Center for Complementary and Integrative Health. Music and health: what you need to know. 2022.<br>
+      3. Rodwin AH, et al. A systematic review of music-based interventions. <em>Child Adolesc Social Work J.</em> 2022.<br>
+      4. Miller CR, et al. Music to reduce stress in hospitalized patients. <em>Nursing.</em> 2021.<br>
+      5. Lai JC-Y, Amaladoss N. Music in waiting rooms: a literature review. <em>HERD.</em> 2021.<br>
+      6. Soyeux O, Marchand S. A web app-based music intervention reduces experimental thermal pain. <em>Front Pain Res.</em> 2023.<br>
+      7. Clark JF. Medicine, emotience, and reason. <em>Philos Ethics Humanit Med.</em> 2024.<br>
+      8. CMS. Person-Centered Care. 2023.<br>
+      9. Robinson J. Likert scale. <em>Springer International Publishing.</em> 1970.
+    </p>
+  </div>
+</section>
+
+<hr>
+
+<!-- TEAM -->
+<section id="team">
+  <h2>Our Team</h2>
+  <p>Health Harmonies is a collaborative effort by Group 9, bringing together diverse expertise in research, design, and technology.</p>
+  
+  <div class="team-grid">
+    <div class="team-member">
+      <h4>Miya Kuang</h4>
+      <div class="role">Team Leader</div>
+      <p>"I really enjoy working with my team, and ideas really come together when all of us from different backgrounds can contribute our own perspectives and strengths. This project taught me how important it is to listen and understand others' perspectives. The challenges made us stronger!"</p>
+    </div>
+    <div class="team-member">
+      <h4>Kelcey Mae Anicete</h4>
+      <div class="role">Research Lead</div>
+      <p>"I learned a lot about the technical and project design angles from our design and technology leads. Collaborating with others is essential in creating large-scale, multi-faceted projects because every individual contributes something important to the team."</p>
+    </div>
+    <div class="team-member">
+      <h4>Vivienne Anne Catarroja</h4>
+      <div class="role">UI/UX Lead</div>
+      <p>Focused on creating an intuitive, user-friendly interface that prioritizes accessibility and emotional safety.</p>
+    </div>
+    <div class="team-member">
+      <h4>Parboni Chattopadhyay</h4>
+      <div class="role">Tech Lead</div>
+      <p>Led the technical implementation of the platform, ensuring smooth functionality and data privacy.</p>
+    </div>
   </div>
 </section>
 
@@ -395,11 +559,10 @@
   </div>
 </section>
 
-<hr>
-
 <!-- FOOTER -->
 <footer>
-  <p><strong>Health Harmonies</strong> · Group 9 Student Research Project</p>
+  <p><strong>Health Harmonies</strong> · Group 9 · Track 3: Music and Health</p>
+  <p style="margin-top:0.5rem; font-size:0.85rem;">Student Research Project · All personal information remains confidential</p>
 </footer>
 
 <script>
